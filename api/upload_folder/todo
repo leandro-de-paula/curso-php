@@ -1,0 +1,50 @@
+1. criar um model de clientes
+  1.1 o model clientes tem a seguintes colunas
+      - name - max 100
+      - email - unique
+      - phone - nullable
+      - description - nullable (1000 caracteres)
+      - timestamp
+      - softdelete
+  1.2 criar uma factory
+  1.3 criar um seeder com 10 clientes, onde 3 sejam clientes deletados
+  1.4 criar migration
+
+2. criar um model de order
+  2.1 o model order tem a seguintes colunas
+      - client_id - FK
+      - price
+      - description - nullable (1000 caracteres)
+      - timestamp
+      - softdelete
+  2.2 criar uma factory
+  2.3 criar um seeder com 30 orders com clientes aleatorios
+  2.4 criar migration
+  
+3. criar um model de ship
+  3.1 o model ship tem a seguintes colunas
+      - id
+      - name
+      - description - nullable (1000 caracteres)
+      - timestamp
+      - softdelete
+  2.2 criar uma factory
+  2.3 criar um seeder com 30 orders com clientes aleatorios
+  2.4 criar migration 
+  
+4. criar um model de Product
+  3.1 o model ship tem a seguintes colunas
+      - id
+      - barcode
+      - qr_code
+      - product_name
+      - description - nullable (1000 caracteres)
+      - category
+      - unit_price
+      - amount
+      - total_price
+      - timestamp
+      - softdelete
+  2.2 criar uma factory
+  2.3 criar um seeder com 30 orders com clientes aleatorios
+  2.4 criar migration 

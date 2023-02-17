@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "curso-php"
+		},
+		{
+			"path": "fsphp"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"bmewburn.vscode-intelephense-client",
+			"ikappas.phpcs"
+		]
+	}
+}
