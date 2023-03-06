@@ -33,18 +33,40 @@
 
 <?php 
 
-$void = 'empty';
-$name = isset($_POST['name']) ? $_POST['name'] : $void;
-$age = isset($_POST['age']) ? $_POST['age'] : $void;
-$login = isset($_POST['login']) ? $_POST['login'] : $void;
-$email = isset($_POST['email']) ? $_POST['email'] : $void;
-$password = isset($_POST['password']) ? $_POST['password']: $void;
+$message = "";
+if (count($_POST) > 0) {
+    $message = "Erros encontrados: ";
 
+    if (empty($_POST['name'])) {
+        $message = $message . "Campo nome vazio" . " | ";
+    }
 
+   
+    if (empty($_POST['age'])) {
+        $message = $message . "Campo idade vazio" . " | ";
+    } elseif (is_numeric($_POST['age']) && $_POST['age'] > "150") {
+        $message = $message . "Idade não pode ser maior que 150 anos" . " | ";
+    } elseif (!is_numeric($_POST['age'])) {
+        $message = $message . "Campo idade é numerico" . " | ";
+    }
 
+    if (empty($_POST['login'])) {
+        $message = $message . "Campo login vazio" . " | ";
+    }
 
-if ($name == $void || $age == $void || $login == $void || $email == $void || $password == $void) {
-    echo "<script>alert('Todos os campos precisam estar preenchido') </script>";
+    if (empty($_POST['email'])) {
+        $message = $message . "Campo email vazio" . " | ";
+    }
+
+    if (empty($_POST['password'])) {
+        $message = $message . "Campo senha vazio" . " | ";
+    }
+    if (strlen($message) > 0 ) {
+       echo "<script>alert('$message')</script>";
+       exit;
+    }
+
+} else {
     exit;
 }
 
